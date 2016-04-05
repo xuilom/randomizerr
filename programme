@@ -1,0 +1,84 @@
+import java.util.Scanner;
+
+public class random {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int nbreJoueur;
+		int nbreEquipe;
+		int rep = '0';
+		int reboot = '0';
+		int nbreJoTab = 0;
+		int nbAleatoire;
+		int a;
+		int b [];
+		int c;
+		int joParEq;
+		int d;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		//titre programme
+		System.out.println("•------------------------•");
+		System.out.println("| Randomiseur en team !  |");
+		System.out.println("•------------------------•");
+		
+		do{ //boucle principale
+			
+			//JOUEUR
+			
+			System.out.println("");
+			System.out.println("Réinistialisation ");
+			System.out.println("");
+			System.out.println("Assigner un nombre aux joueurs !");
+			System.out.println("");
+			nbreJoTab = 0;
+			nbreJoueur = 0;
+			System.out.println("Combien de joueurs ?");
+			nbreJoueur = sc.nextInt();
+			System.out.println( nbreJoueur +" joueurs sélectionnés !");
+			nbreJoTab = nbreJoueur - 1;
+			
+				//EQUIPE
+			
+			System.out.println("");
+			System.out.println("Combien d'équipes ?");
+			nbreEquipe = 0;
+			nbreEquipe = sc.nextInt();
+			System.out.println( nbreEquipe + " équipes sélectionné !");
+			joParEq = nbreJoueur / nbreEquipe;
+			
+			//RANDOMIZATION
+
+			
+			d = 0;
+			
+			while ( d <= nbreJoTab ){
+				d = d +1;
+				System.out.print("Joueur" +d );
+				nbAleatoire = 0;
+				nbAleatoire = (int) (Math.random() * nbreEquipe + 1);
+				System.out.println(" dans l'équipe" + nbAleatoire );
+				System.out.println("");
+				
+				
+			}
+						
+
+			
+			//reboot
+		      do{       
+		          System.out.println("Souhaitez-vous recommencer ? ");
+		          System.out.println("");
+		          System.out.println("Tapez 1 pour oui");
+		          System.out.println("Tapez 2 pour non");
+		          reboot = sc.nextInt();
+		         
+		        }while(reboot != 1 && reboot != 2);
+		}while( reboot == 1);
+		System.out.println("Au revoir...");
+		
+	}
+
+}
